@@ -38,12 +38,14 @@ function App() {
     setCurrentPageUrl(prevPageUrl)
   }
 
-  if (loading) return "Loading"
+  if (loading) return (
+    <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  )
 
   return (
     <>
-
-      <PokemonList pokemons = {pokemons} />
+      <h2 style={{textAlign:'center'}}>Pokemon fetch data</h2>
+      <PokemonList pokemons = {pokemons} /> 
       <Pagination 
         nextPage = {nextPageUrl ? goToNextPage : null} 
         prevPage = {prevPageUrl ? goToPrevPage : null}
